@@ -1,0 +1,62 @@
+{
+	"info": {
+		"_postman_id": "976ec2dd-69b6-4819-8197-4ba44b1df0b6",
+		"name": "Image Processor",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10959407",
+		"_collection_link": "https://galactic-firefly-687559.postman.co/workspace/GoMarble-AI~7a446ab7-6842-4db0-97d1-3244b957fd51/collection/10959407-976ec2dd-69b6-4819-8197-4ba44b1df0b6?action=share&source=collection_link&creator=10959407"
+	},
+	"item": [
+		{
+			"name": "upload",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "postman-cloud:///1ef8a2fc-3496-4d80-8652-b8dfee17658a"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/upload",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"upload"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get status",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/status/670d16a94c645cba44823a49",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"status",
+						"670d16a94c645cba44823a49"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
