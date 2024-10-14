@@ -1,4 +1,5 @@
 const { getDB } = require("../config/db");
+const ObjectId = require("mongodb").ObjectId;
 
 async function createRequest(productData, webhookUrl) {
   const db = getDB();
@@ -18,14 +19,14 @@ async function createRequest(productData, webhookUrl) {
 
 async function getRequestById(requestId) {
   const db = getDB();
-  return db.collection("requests").findOne({ _id: requestId });
+  return db.collection("requests").findOne({ _id: new ObjectId(requestId) });
 }
 
 async function updateRequestStatus(requestId, status) {
   const db = getDB();
   return db
     .collection("requests")
-    .updateOne({ _id: requestId }, { $set: { status } });
+    .updateOne({ _id: new ObjectId(requestId) }, { $set: { status } });
 }
 
 module.exports = { createRequest, getRequestById, updateRequestStatus };
